@@ -1,0 +1,117 @@
+/* Product Card */
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px;
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+  }
+  
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+  
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 2px solid #3498db;
+    transition: transform 0.3s ease;
+}
+  
+.product-card:hover img {
+    transform: scale(1.05);
+}
+  
+.product-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 1rem 0;
+}
+  
+.product-card p {
+    font-size: 1.25rem;
+    color: #3498db;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Hover effect overlay */
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(52, 152, 219, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    pointer-events: none; /* Prevent hover overlay from blocking interaction with button */
+}
+  
+.product-card:hover::before {
+    opacity: 1;
+}
+  
+.product-card * {
+    z-index: 1;
+}
+
+/* Quantity Counter Section */
+.cart-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.cart-controls button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.cart-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.cart-controls span {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #ff0000;
+    transform: scale(1.05);
+}
